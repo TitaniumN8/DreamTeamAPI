@@ -15,12 +15,9 @@ builder.Services.AddDbContext<DreamTeamContext>(options => options.UseSqlServer(
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Swagger UI is on in every environment so the endpoints can be explored at /swagger.
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
